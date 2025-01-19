@@ -1,3 +1,51 @@
+// Toggle mobile menu
+function toggleMenu() {
+    const menu = document.querySelector('.menu');
+    menu.classList.toggle('active');
+}
+
+// Toggle dropdown
+function toggleDropdown() {
+    const dropdown = document.querySelector('.dropdown');
+    dropdown.classList.toggle('active');
+}
+
+// Close dropdown and menu when clicking outside
+document.addEventListener('click', function(e) {
+    const menu = document.querySelector('.menu');
+    const hamburger = document.querySelector('.hamburger');
+    const dropdown = document.querySelector('.dropdown');
+    const userButton = document.querySelector('.user-button');
+    
+    // Close menu if clicking outside
+    if (menu && !menu.contains(e.target) && !hamburger.contains(e.target)) {
+        menu.classList.remove('active');
+    }
+    
+    // Close dropdown if clicking outside
+    if (dropdown && !dropdown.contains(e.target) && !userButton.contains(e.target)) {
+        dropdown.classList.remove('active');
+    }
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 document.getElementById('search-button').addEventListener('click', function (event) {
     const query = document.getElementById('location').value;
