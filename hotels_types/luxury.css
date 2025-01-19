@@ -1,0 +1,113 @@
+body {
+    font-family: 'Georgia', serif;
+    background-color: #f8f5f1;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    color: #333;
+}
+
+.container {
+    display: flex;
+    width: 100%;
+}
+
+.left-section {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 300px;
+    height: 100vh;
+    background-color: #fff;
+    padding: 30px;
+    box-shadow: 2px 0 15px rgba(0, 0, 0, 0.1);
+    overflow-y: auto;
+}
+
+.right-section {
+    margin-left: 350px;
+    padding: 30px;
+    width: calc(100% - 320px);
+    overflow-y: auto;
+}
+
+.filter-title {
+    font-size: 24px;
+    color: #c49f65;
+    margin-bottom: 25px;
+}
+
+.filter-group {
+    margin-bottom: 20px;
+}
+
+.filter-label {
+    font-size: 16px;
+    display: block;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.filter-select {
+    width: 100%;
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f0e6d2;
+}
+
+.hotel-card {
+    display: flex;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    margin-bottom: 30px;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.hotel-image {
+    width: 150px;
+    height: 100px;
+    border-radius: 8px;
+    object-fit: cover;
+    margin-right: 20px;
+}
+
+.hotel-details {
+    flex: 1;
+}
+
+.hotel-name {
+    font-size: 22px;
+    font-weight: bold;
+    color: #5c4033;
+    margin-bottom: 10px;
+}
+
+.hotel-location {
+    font-size: 16px;
+    color: #888;
+    margin-bottom: 15px;
+}
+
+.hotel-price {
+    font-size: 18px;
+    font-weight: bold;
+    color: #d88a6d;
+}
+
+.book-btn {
+    background: #c49f65;
+    color: #fff;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.book-btn:hover {
+    background: #a17d52;
+}

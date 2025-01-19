@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Premium Hotels in India</title>
+    <style>
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f8ff;
+            color: #333;
+            margin: 0;
+        }
+
+        /* Container that holds the sections */
+        .container {
+            display: flex;
+            justify-content: space-between;
+            padding: 20px;
+            margin-top: 20px;
+        }
+
+        /* Left Section (Filters) */
+        .left-section {
+            width: 25%;
+            background-color: #ffffff;
+            padding: 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            background-color: #e6f7ff;
+        }
+
+        .filter-title {
+            font-size: 22px;
+            font-weight: bold;
+            margin-bottom: 20px;
+            color: #007bff;
+        }
+
+        .filter-group {
+            margin-bottom: 15px;
+        }
+
+        .filter-label {
+            display: block;
+            margin-bottom: 5px;
+            font-size: 14px;
+            color: #555;
+        }
+
+        .filter-select {
+            width: 100%;
+            padding: 10px;
+            border-radius: 4px;
+            border: 1px solid #ddd;
+            background-color: #f2f9ff;
+        }
+
+        .filter-select:focus {
+            outline: none;
+            border-color: #007bff;
+        }
+
+        /* Right Section (Hotel Cards) */
+        .right-section {
+            width: 70%;
+            padding: 20px;
+            overflow-y: scroll;
+            max-height: 90vh;
+        }
+
+        .right-section h1 {
+            font-size: 28px;
+            font-weight: bold;
+            margin-bottom: 20px;
+            color: #007bff;
+        }
+
+        /* Hotel Card */
+        .hotel-card {
+            display: flex;
+            background: #ffffff;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            padding: 15px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+            background-color: #f9faff;
+        }
+
+        .hotel-card:hover {
+            transform: scale(1.02);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .hotel-image {
+            width: 150px;
+            height: 100px;
+            border-radius: 8px;
+            object-fit: cover;
+            margin-right: 20px;
+        }
+
+        .hotel-details {
+            flex: 1;
+        }
+
+        .hotel-name {
+            font-size: 22px;
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: #007bff;
+        }
+
+        .hotel-location {
+            font-size: 14px;
+            color: #888;
+            margin-bottom: 10px;
+        }
+
+        .hotel-price {
+            font-size: 16px;
+            color: #007bff;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        .book-btn {
+            background-color: #007bff;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            text-decoration: none;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .book-btn:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="left-section">
+            <h2 class="filter-title">Filter and Sort Hotels</h2>
+            <div class="filter-group">
+                <label for="city-filter" class="filter-label">City:</label>
+                <select id="city-filter" class="filter-select">
+                    <option value="all">All Cities</option>
+                    <option value="mumbai">Mumbai</option>
+                    <option value="udaipur">Udaipur</option>
+                    <option value="delhi">New Delhi</option>
+                    <option value="chennai">Chennai</option>
+                    <option value="jodhpur">Jodhpur</option>
+                </select>
+            </div>
+
+            <div class="filter-group">
+                <label for="price-sort" class="filter-label">Sort By Price:</label>
+                <select id="price-sort" class="filter-select">
+                    <option value="low-to-high">Low to High</option>
+                    <option value="high-to-low">High to Low</option>
+                </select>
+            </div>
+
+            <div class="filter-group">
+                <label for="nearby-filter" class="filter-label">Nearby Hotels:</label>
+                <select id="nearby-filter" class="filter-select">
+                    <option value="no">No</option>
+                    <option value="yes">Yes</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="right-section">
+            <h1>Premium Hotels in India (INR 3,599 - INR 7,999)</h1>
+
+            <!-- Premium Hotel Cards -->
+            <div class="hotel-card">
+                <img class="hotel-image" src="hotels_pics/the-park-rooms.jpg" alt="The Park Hyderabad">
+                <div class="hotel-details">
+                    <h2 class="hotel-name">The Park</h2>
+                    <p class="hotel-location">Hyderabad, Telangana</p>
+                    <p class="hotel-price">Price: INR 6,500/night</p>
+                    <a href="#" class="book-btn">Book Now</a>
+                </div>
+            </div>
+
+            <div class="hotel-card">
+                <img class="hotel-image" src="hotels_pics/raddison-blu-rooms.jpg" alt="Radisson Blu Bangalore">
+                <div class="hotel-details">
+                    <h2 class="hotel-name">Radisson Blu</h2>
+                    <p class="hotel-location">Bangalore, Karnataka</p>
+                    <p class="hotel-price">Price: INR 7,200/night</p>
+                    <a href="#" class="book-btn">Book Now</a>
+                </div>
+            </div>
+
+            <div class="hotel-card">
+                <img class="hotel-image" src="hotels_pics/holiday-inn-rooms.jpg" alt="Holiday Inn Delhi">
+                <div class="hotel-details">
+                    <h2 class="hotel-name">Holiday Inn</h2>
+                    <p class="hotel-location">New Delhi, Delhi</p>
+                    <p class="hotel-price">Price: INR 4,800/night</p>
+                    <a href="#" class="book-btn">Book Now</a>
+                </div>
+            </div>
+
+            <div class="hotel-card">
+                <img class="hotel-image" src="hotels_pics/jw-marriott-rooms.jpg" alt="JW Marriott Mumbai">
+                <div class="hotel-details">
+                    <h2 class="hotel-name">JW Marriott</h2>
+                    <p class="hotel-location">Mumbai, Maharashtra</p>
+                    <p class="hotel-price">Price: INR 7,000/night</p>
+                    <a href="#" class="book-btn">Book Now</a>
+                </div>
+            </div>
+
+            <div class="hotel-card">
+                <img class="hotel-image" src="hotels_pics/leela-gurgaon-rooms.jpg" alt="The Leela Gurgaon">
+                <div class="hotel-details">
+                    <h2 class="hotel-name">The Leela</h2>
+                    <p class="hotel-location">Gurgaon, Haryana</p>
+                    <p class="hotel-price">Price: INR 5,500/night</p>
+                    <a href="#" class="book-btn">Book Now</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

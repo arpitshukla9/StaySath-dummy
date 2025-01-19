@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luxury Hotels in India</title>
+    <link rel="stylesheet" href="luxury.css">
+</head>
+<body>
+    <div class="container">
+        <div class="left-section">
+            <h2 class="filter-title">Filter and Sort Hotels</h2>
+            <div class="filter-group">
+                <label for="city-filter" class="filter-label">City:</label>
+                <select id="city-filter" class="filter-select">
+                    <option value="all">All Cities</option>
+                    <option value="mumbai">Mumbai</option>
+                    <option value="udaipur">Udaipur</option>
+                    <option value="delhi">New Delhi</option>
+                    <option value="chennai">Chennai</option>
+                    <option value="jodhpur">Jodhpur</option>
+                </select>
+            </div>
+
+            <div class="filter-group">
+                <label for="price-sort" class="filter-label">Sort By Price:</label>
+                <select id="price-sort" class="filter-select">
+                    <option value="low-to-high">Low to High</option>
+                    <option value="high-to-low">High to Low</option>
+                </select>
+            </div>
+
+            <div class="filter-group">
+                <label for="nearby-filter" class="filter-label">Nearby Hotels:</label>
+                <select id="nearby-filter" class="filter-select">
+                    <option value="no">No</option>
+                    <option value="yes">Yes</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="right-section">
+            <h1>Luxury Hotels in India</h1>
+
+            <!-- Hotel Cards -->
+            <div class="hotel-card">
+                <img class="hotel-image" src="hotels_pics/taj mahal palce rooms.jpg" alt="Hotel Image">
+                <div class="hotel-details">
+                    <h2 class="hotel-name">Taj Mahal Palace</h2>
+                    <p class="hotel-location">Mumbai, Maharashtra</p>
+                    <p class="hotel-price">Price: INR 25,000/night</p>
+                    <a href="#" class="book-btn">Book Now</a>
+                </div>
+            </div>
+
+            <div class="hotel-card">
+                <img class="hotel-image" src="hotels_pics/udai-vilas-rooms.jpg" alt="Hotel Image">
+                <div class="hotel-details">
+                    <h2 class="hotel-name">Oberoi Udaivilas</h2>
+                    <p class="hotel-location">Udaipur, Rajasthan</p>
+                    <p class="hotel-price">Price: INR 18,000/night</p>
+                    <a href="#" class="book-btn">Book Now</a>
+                </div>
+            </div>
+
+            <div class="hotel-card">
+                <img class="hotel-image" src="hotels_pics/leela-palace-rooms.jpg" alt="Hotel Image">
+                <div class="hotel-details">
+                    <h2 class="hotel-name">Leela Palace</h2>
+                    <p class="hotel-location">New Delhi, Delhi</p>
+                    <p class="hotel-price">Price: INR 15,000/night</p>
+                    <a href="#" class="book-btn">Book Now</a>
+                </div>
+            </div>
+
+            <div class="hotel-card">
+                <img class="hotel-image" src="hotels_pics/itc-rooms.jpg" alt="Hotel Image">
+                <div class="hotel-details">
+                    <h2 class="hotel-name">ITC Grand Chola</h2>
+                    <p class="hotel-location">Chennai, Tamil Nadu</p>
+                    <p class="hotel-price">Price: INR 12,000/night</p>
+                    <a href="#" class="book-btn">Book Now</a>
+                </div>
+            </div>
+
+            <div class="hotel-card">
+                <img class="hotel-image" src="hotels_pics/umaid bhawan palace rooms.jpg" alt="Hotel Image">
+                <div class="hotel-details">
+                    <h2 class="hotel-name">Umaid Bhawan Palace</h2>
+                    <p class="hotel-location">Jodhpur, Rajasthan</p>
+                    <p class="hotel-price">Price: INR 20,000/night</p>
+                    <a href="#" class="book-btn">Book Now</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
