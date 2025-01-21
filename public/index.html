@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hotel Booking</title>
+    <link rel="icon" type="image/png" href="assets/favicon.ico">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+
+<!-- Navbar Section -->
+<div class="navbar">
+    <div class="logo">
+        <img src="assets/staysaathlogo-removebg-preview.png" alt="Logo" />
+    </div>
+<!-- Navbar for larger screens -->
+<ul class="menu-hotel">
+    <li><a id="luxury-button" href="hotels_types/luxury.html">Luxury</a></li>
+    <li><a id="premium-button" href="hotels_types/premium.html">Premium</a></li>
+    <li><a id="economical-button" href="hotels_types/economic.html">Economical</a></li>
+</ul>
+
+<!-- Hamburger Menu for Small Screens -->
+<button class="hamburger" onclick="toggleMenu()">☰</button>
+
+<!-- Dropdown menu for smaller screens -->
+<div class="menu">
+    <button class="close-btn" onclick="toggleMenu()">×</button>
+    <ul class="menu-list">
+        <li><a href="profile.html">Profile</a></li>
+        <li><a href="settings.html">Settings</a></li>
+        <li><a href="notifications.html">Notifications</a></li>
+        <li><a href="help.html">Help</a></li>
+        <li><a href="logout.html">Logout</a></li>
+    </ul>
+
+    <!-- Dropdown for Luxury, Premium, and Economical for Mobile -->
+    <ul class="menu-dropdown">
+        <li><a class="dropdown-button" href="hotels_types/luxury.html">Luxury</a></li>
+        <li><a class="dropdown-button" href="hotels_types/premium.html">Premium</a></li>
+        <li><a class="dropdown-button" href="hotels_types/economic.html">Economical</a></li>
+    </ul>
+</div>
+
+    <div class="login-signup-section">
+            <button class="unified-btn" id="login-signup-btn">
+                Login
+            </button>
+        </div>
+    </div>
+</div>
+
+    <form action="#" class="search-form">
+        <div class="search-field">
+            <label for="location">Where</label>
+            <input type="text" id="location" placeholder="Enter a city, landmark or hotel name" required>
+        </div>
+        <div class="search-field">
+            <label for="checkin">Check-in</label>
+            <input type="date" id="checkin" placeholder="dd-mm-yyyy" required>
+        </div>
+        <div class="search-field">
+            <label for="checkout">Check-out</label>
+            <input type="date" id="checkout" placeholder="dd-mm-yyyy" required>
+        </div>
+        <div class="search-field">
+            <label for="rooms">Rooms</label>
+            <select id="rooms" required>
+                <option value="1">1 Room</option>
+                <option value="2">2 Rooms</option>
+                <option value="3">3 Rooms</option>
+                <option value="4">4 Rooms</option>
+            </select>
+        </div>
+        <div class="search-field">
+            <label for="guests">Guests</label>
+            <select id="guests" required>
+                <option value="1">1 Guest</option>
+                <option value="2">2 Guests</option>
+                <option value="3">3 Guests</option>
+                <option value="4">4+ Guests</option>
+            </select>
+        </div>
+        <button type="submit" class="search-button" id="search-button">Search</button>
+    </form>
+
+        <!-- SLIDER IMAGES
+    <div class="unique-slider-container" id="hotelTravelSlider">
+        <div class="unique-slider" id="hotelTravelSlides"> -->
+            <!-- Slide 1 -->
+            <!-- <div class="unique-slide" id="slide1"
+                style="background-image: url('assets/valleyofflower.jpg');">
+                <div class="unique-slide-content">
+                    <h2>Explore Luxurious Hotels</h2>
+                    <p>Find the best places to stay for your next vacation.</p>
+                    <a href="#" class="btn">Discover More</a>
+                </div>
+            </div> -->
+
+            <!-- Slide 2 -->
+            <!-- <div class="unique-slide" id="slide2"
+                style="background-image: url('assets/goa.jpg');">
+                <div class="unique-slide-content">
+                    <h2>Experience Beautiful Destinations</h2>
+                    <p>Your dream vacation awaits in stunning locations.</p>
+                    <a href="#" class="btn">Book Now</a>
+                </div>
+            </div> -->
+
+            <!-- Slide 3 -->
+            <!-- <div class="unique-slide" id="slide3"
+                style="background-image: url('assets/eiffeltower.jpg');">
+                <div class="unique-slide-content">
+                    <h2>Relax and Rejuvenate</h2>
+                    <p>Unwind at peaceful retreats and resorts.</p>
+                    <a href="#" class="btn">Start Your Journey</a>
+                </div>
+            </div> -->
+
+             <!-- Slide 4 -->
+             <!-- <div class="unique-slide" id="slide4"
+             style="background-image: url('assets/munnar-suggest.jpg');">
+             <div class="unique-slide-content">
+                 <h2>Relax and Rejuvenate</h2>
+                 <p>Unwind at peaceful retreats and resorts.</p>
+                 <a href="#" class="btn">Start Your Journey</a>
+             </div>
+         </div> -->
+
+          <!-- Slide 5 -->
+          <!-- <div class="unique-slide" id="slide5"
+          style="background-image: url('assets/nandi_hills.jpg');">
+          <div class="unique-slide-content">
+              <h2>Relax and Rejuvenate</h2>
+              <p>Unwind at peaceful retreats and resorts.</p>
+              <a href="#" class="btn">Start Your Journey</a>
+          </div> -->
+      <!-- </div>
+        </div> -->
+    </div>
+    <div class="suggestion-box">
+        <h2>
+            Top Destinations for Your Next Adventure <span class="jan-mar">January to March</span> </h2>
+        <div class="suggestion">
+            <img src="assets/goa-suggest.jpg" alt="Destination 1">
+            <h3>Goa</h3>
+            <p>Explore the beautiful beaches and vibrant culture of Goa.</p>
+            <a href="destination1-details.html" class="btn">Learn More</a>
+        </div>
+        <div class="suggestion">
+            <img src="assets/hawa-mahal.jpg" alt="Destination 2">
+            <h3>Hawa Mahal, Jaipur</h3>
+            <p>Discover the stunning landscapes and ancient architecture of Rajasthan.</p>
+            <a href="destination2-details.html" class="btn">Learn More</a>
+        </div>
+        <div class="suggestion">
+            <img src="assets/munnar-suggest.jpg" alt="Destination 3">
+            <h3>Munnar, Kerala</h3>
+            <p>Experience the bustling city life and modern wonders of Kerala.</p>
+            <a href="destination3-details.html" class="btn">Learn More</a>
+        </div>
+        <div class="suggestion">
+            <img src="assets/shimla.jpg" alt="Destination 3">
+            <h3>Himachal Pradesh</h3>
+            <p>Experience the scenic beauty of Shimla with its snow-covered peaks.</p>
+            <a href="destination3-details.html" class="btn">Learn More</a>
+        </div>
+    </div>
+    <div class="offers-section">
+        <h3>Exclusive Offers for Your Next Adventure</h3>
+        <p>Book now and enjoy amazing discounts on top destinations. From scenic hill stations to sunny beaches, we have
+            the best deals waiting for you!</p>
+        <div class="offers-grid">
+            <div class="offer-item">
+                <img src="assets/shimla-offers.avif" alt="Shimla Winter Special" class="offer-img">
+                <h4>Shimla Winter Special</h4>
+                <p>Get 50% off on your Shimla getaway. Limited time offer!</p>
+                <a href="offer-details1.html" class="btn">BOOK NOW</a>
+            </div>
+            <div class="offer-item">
+                <img src="assets/goa-offers.webp" alt="Goa Beach Special" class="offer-img">
+                <h4>Goa Beach Escape</h4>
+                <p>Up to 30% off on Goa beach resorts. Relax in paradise!</p>
+                <a href="offer-details2.html" class="btn">BOOK NOW</a>
+            </div>
+            <div class="offer-item">
+                <img src="assets/kerala-offers.avif" alt="Kerala Special" class="offer-img">
+                <h4>Kerala Backwaters</h4>
+                <p>Enjoy exclusive discounts on Kerala houseboats and resorts.</p>
+                <a href="offer-details3.html" class="btn">BOOK NOW</a>
+            </div>
+            <div class="offer-item">
+                <img src="assets/rajasthan.avif" alt="Rajasthan Special" class="offer-img">
+                <h4>Rajasthan Heritage Tour</h4>
+                <p>Explore Rajasthan’s forts and palaces at special prices.</p>
+                <a href="offer-details4.html" class="btn">BOOK NOW</a>
+            </div>
+            <div class="offer-item">
+                <img src="assets/uttarakhand.avif" alt="Uttarakhand Special" class="offer-img">
+                <h4>Uttarakhand Adventure</h4>
+                <p>Get adventure packages with a discount of up to 40%!</p>
+                <a href="offer-details5.html" class="btn">BOOK NOW</a>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="region-section">
+            <h2 class="region-title">Destinations Across India</h2>
+            <div class="destinations-grid">
+                <!-- North India -->
+                <div class="destination-column">
+                    <h3 class="region-title">North India</h3>
+                    <div class="destination-card">
+                        <img src="assets/taj-mahal.avif" alt="Taj Mahal" class="destination-image">
+                        <div class="destination-info">
+                            <h3 class="destination-name">Taj Mahal, Agra</h3>
+                            <p class="destination-desc">Hotels, Luxury Resorts, Heritage Hotels, Near Taj Mahal</p>
+                        </div>
+                    </div>
+                    <div class="destination-card">
+                        <img src="assets/golden-temple.avif" alt="Golden Temple" class="destination-image">
+                        <div class="destination-info">
+                            <h3 class="destination-name">Golden Temple, Amritsar</h3>
+                            <p class="destination-desc">Hotels, Budget Hotels, Homestays, Near Golden Temple</p>
+                        </div>
+                    </div>
+                    <div class="destination-card">
+                        <img src="assets/red-fort.avif" alt="Red Fort" class="destination-image">
+                        <div class="destination-info">
+                            <h3 class="destination-name">Red Fort, Delhi</h3>
+                            <p class="destination-desc">Hotels, Heritage Hotels, Budget Hotels, Near Chandni Chowk</p>
+                        </div>
+                    </div>
+                    <div class="destination-card">
+                        <img src="assets/leh.avif" alt="Leh-Ladakh" class="destination-image">
+                        <div class="destination-info">
+                            <h3 class="destination-name">Leh-Ladakh</h3>
+                            <p class="destination-desc">Homestays, Adventure Camps, Mountain Resorts, Luxury Hotels</p>
+                        </div>
+                    </div>
+                    <div class="destination-card">
+                        <img src="assets//varanasi-ghats.webp" alt="Varanasi Ghats" class="destination-image">
+                        <div class="destination-info">
+                            <h3 class="destination-name">Varanasi Ghats</h3>
+                            <p class="destination-desc">River View Hotels, Heritage Hotels, Spiritual Stays</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- South India -->
+                <div class="destination-column">
+                    <h3 class="region-title">South India</h3>
+                    <div class="destination-card">
+                        <img src="assets/mysore.webp" alt="Mysore Palace" class="destination-image">
+                        <div class="destination-info">
+                            <h3 class="destination-name">Mysore Palace</h3>
+                            <p class="destination-desc">Heritage Hotels, Luxury Hotels, Near Palace</p>
+                        </div>
+                    </div>
+                    <div class="destination-card">
+                        <img src="assets/hampi.webp" alt="Hampi" class="destination-image">
+                        <div class="destination-info">
+                            <h3 class="destination-name">Hampi</h3>
+                            <p class="destination-desc">Guest Houses, Heritage Hotels, Budget Stays</p>
+                        </div>
+                    </div>
+                    <div class="destination-card">
+                        <img src="assets/kerala-backwaters.avif" alt="Kerala Backwaters" class="destination-image">
+                        <div class="destination-info">
+                            <h3 class="destination-name">Kerala Backwaters</h3>
+                            <p class="destination-desc">Houseboats, Riverside Resorts, Luxury Hotels</p>
+                        </div>
+                    </div>
+                    <div class="destination-card">
+                        <img src="assets/ooty.avif" alt="Ooty" class="destination-image">
+                        <div class="destination-info">
+                            <h3 class="destination-name">Ooty</h3>
+                            <p class="destination-desc">Hill Resorts, Colonial Hotels, Cottages</p>
+                        </div>
+                    </div>
+                    <div class="destination-card">
+                        <img src="assets/mahabalipuram.avif" alt="Mahabalipuram" class="destination-image">
+                        <div class="destination-info">
+                            <h3 class="destination-name">Mahabalipuram</h3>
+                            <p class="destination-desc">Beach Resorts, Heritage Hotels, Budget Hotels</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- East India -->
+                <div class="destination-column">
+                    <h3 class="region-title">East India</h3>
+                    <div class="destination-card">
+                        <img src="assets/darjeeling.avif" alt="Darjeeling" class="destination-image">
+                        <div class="destination-info">
+                            <h3 class="destination-name">Darjeeling</h3>
+                            <p class="destination-desc">Mountain Resorts, Heritage Hotels, Tea Estate Stays</p>
+                        </div>
+                    </div>
+                    <div class="destination-card">
+                        <img src="assets/sunderbans.webp" alt="Sundarbans" class="destination-image">
+                        <div class="destination-info">
+                            <h3 class="destination-name">Sundarbans</h3>
+                            <p class="destination-desc">Eco Resorts, Jungle Lodges, River Camps</p>
+                        </div>
+                    </div>
+                    <div class="destination-card">
+                        <img src="assets/konark.webp" alt="Konark Sun Temple" class="destination-image">
+                        <div class="destination-info">
+                            <h3 class="destination-name">Konark Sun Temple, Odisha</h3>
+                            <p class="destination-desc">Heritage Hotels, Budget Hotels, Near Temple</p>
+                        </div>
+                    </div>
+                    <div class="destination-card">
+                        <img src="assets/bodh-gaya.webp" alt="Bodh Gaya" class="destination-image">
+                        <div class="destination-info">
+                            <h3 class="destination-name">Bodh Gaya</h3>
+                            <p class="destination-desc">Hotels, Spiritual Stays, Buddhist Monasteries</p>
+                        </div>
+                    </div>
+                    <div class="destination-card">
+                        <img src="assets/digha.webp" alt="Digha" class="destination-image">
+                        <div class="destination-info">
+                            <h3 class="destination-name">Digha</h3>
+                            <p class="destination-desc">Beach Resorts, Budget Stays, Seaside Hotels</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- West India -->
+                <div class="destination-column">
+                    <h3 class="region-title">West India</h3>
+                    <div class="destination-card">
+                        <img src="assets/gateway-of-india.webp" alt="Gateway of India" class="destination-image">
+                        <div class="destination-info">
+                            <h3 class="destination-name">Gateway of India, Mumbai</h3>
+                            <p class="destination-desc">Sea View Hotels, Luxury Hotels, Colaba Hotels</p>
+                        </div>
+                    </div>
+                    <div class="destination-card">
+                        <img src="assets/ajanta.webp" alt="Ajanta Caves" class="destination-image">
+                        <div class="destination-info">
+                            <h3 class="destination-name">Ajanta & Ellora Caves</h3>
+                            <p class="destination-desc">Hotels, Resorts, Budget Hotels, Near Caves</p>
+                        </div>
+                    </div>
+                    <div class="destination-card">
+                        <img src="assets/goa.jpg" alt="Goa Beaches" class="destination-image">
+                        <div class="destination-info">
+                            <h3 class="destination-name">Goa Beaches</h3>
+                            <p class="destination-desc">Beach Resorts, Luxury Hotels, Beach Huts, Villas</p>
+                        </div>
+                    </div>
+                    <div class="destination-card">
+                        <img src="assets/rann-of-kutch.avif" alt="Rann of Kutch" class="destination-image">
+                        <div class="destination-info">
+                            <h3 class="destination-name">Rann of Kutch</h3>
+                            <p class="destination-desc">Desert Resorts, Luxury Tents, Traditional Stays</p>
+                        </div>
+                    </div>
+                    <div class="destination-card">
+                        <img src="assets/jaisalmer-fort.webp" alt="Jaisalmer Fort" class="destination-image">
+                        <div class="destination-info">
+                            <h3 class="destination-name">Jaisalmer Fort</h3>
+                            <p class="destination-desc">Heritage Hotels, Desert Camps, Near Fort</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer Section -->
+    <footer>
+        <div class="slider-container">
+            <!-- About Us Section -->
+            <div class="slider-section" style="background-image: url('https://via.placeholder.com/800x600');"
+                onclick="toggleText('aboutText', this)">
+                <h2 class="section-title">About Us</h2>
+                <p id="aboutText">
+                    At StaySath, trust and reliability are at the heart of everything we do. We are committed to
+                    providing safe, comfortable, and high-quality accommodations that you can count on, whether you're
+                    traveling for business or leisure.
+                </p>
+                <button class="toggle-btn">Learn More</button>
+            </div>
+
+            <!-- Support Section -->
+            <div class="slider-section" style="background-image: url('https://via.placeholder.com/800x600');"
+                onclick="toggleText('supportText', this)">
+                <h2 class="section-title">Support</h2>
+                <p id="supportText">
+                    At StaySath, we provide 24/7 reliable support for any inquiries or issues. Whether you need help
+                    with bookings or have any questions, we are here to assist you anytime.
+                </p>
+                <button class="toggle-btn">Learn More</button>
+            </div>
+
+            <!-- Legal Section -->
+            <div class="slider-section" style="background-image: url('https://via.placeholder.com/800x600');"
+                onclick="toggleText('legalText', this)">
+                <h2 class="section-title">Legal</h2>
+                <p id="legalText">
+                    StaySath values your privacy and ensures transparency. Our legal policies are designed to protect
+                    your rights and ensure clear, fair terms throughout your journey with us.
+                </p>
+                <button class="toggle-btn">Learn More</button>
+            </div>
+
+            <!-- Contact Section -->
+            <div class="slider-section" style="background-image: url('https://via.placeholder.com/800x600');">
+                <h2 class="section-title">Contact</h2>
+                <div class="contact-form">
+                    <div class="form-content">
+                        <input type="email" placeholder="Your Email">
+                        <textarea placeholder="Your Message" rows="4"></textarea>
+                        <button class="submit-btn">Submit</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="social-links">
+                <a href="https://facebook.com/StaySath" target="blank" aria-label="Facebook">
+                    <i class="fab fa-facebook"></i>
+                </a>
+                <a href="https://twitter.com/StaySath" target="blank" aria-label="Twitter">
+                    <i class="fab fa-twitter"></i>
+                </a>
+                <a href="https://instagram.com/StaySath" target="blank" aria-label="Instagram">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="https://linkedin.com/company/StaySath" target="blank" aria-label="LinkedIn">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+            </div>
+        </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 StaySath. All rights reserved.</p>
+        </div>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>

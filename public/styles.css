@@ -1,0 +1,1202 @@
+body {
+    background: url('assets/valleyofflower.jpg') no-repeat center center fixed;
+    background-size: cover;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+    background-color: beige;
+}
+
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.1); 
+    backdrop-filter: blur(15px);
+    padding: 10px 30px; 
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    height: 70px; 
+    transition: all 0.3s ease;
+}
+
+.logo {
+    flex: 0 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.logo img {
+    height: 40px;
+    filter: grayscale(100%) brightness(90%);
+}
+
+.logo img:hover {
+    filter: grayscale(0%) brightness(110%);
+}
+
+ 
+
+
+.tabs-container {
+    display: flex;
+    justify-content: center; /* Centers the tabs horizontally */
+    align-items: center; /* Vertically centers the tabs */
+    margin-top: 20px;
+    width: 100%; /* Ensures the container takes the full width */
+}
+
+.menu-hotel {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    margin: 0;
+    margin-left: 30%;
+    position: relative;
+}
+
+.menu-hotel li {
+    margin: 0 15px;
+    position: relative;
+}
+
+.menu-hotel a {
+    display: inline-block;
+    padding: 12px 25px;
+    background-color: #333; /* Default background color */
+    color: white;
+    text-decoration: none;
+    border-radius: 10px; /* Rounded corners */
+    border: 2px solid transparent;
+    font-weight: bold;
+    position: relative;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 15px rgba(255, 0, 255, 0.5); /* Subtle initial neon glow */
+}
+
+.menu-hotel a:hover,
+.menu-hotel a.active {
+    background-color: #fff; /* Background color when hovered or active */
+    color: #333; /* Text color when hovered or active */
+    border-color: #fff; /* Border color when hovered or active */
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.8), 0 0 40px rgba(255, 0, 255, 0.6), 0 0 60px rgba(0, 255, 255, 0.6); /* Multi-colored neon glow */
+    transform: translateY(-5px); /* Slightly lifts the tab on hover */
+}
+
+.menu-hotel a::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    background: radial-gradient(circle, rgba(255, 0, 255, 0.2), rgba(0, 255, 255, 0.1) 70%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.menu-hotel a:hover::before,
+.menu-hotel a.active::before {
+    opacity: 1;
+}
+
+.menu-hotel a.active {
+    background-color: #0069d9; /* Active tab background color */
+    color: white; /* Active tab text color */
+    box-shadow: 0 0 20px rgba(0, 123, 255, 1), 0 0 40px rgba(255, 0, 255, 0.8), 0 0 60px rgba(0, 255, 255, 0.8); /* Intense multi-colored neon glow */
+    transform: translateY(-8px); /* More lift effect when active */
+}
+
+/* Floating effect for tab container */
+@keyframes float {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+.tabs-container {
+    animation: float 3s ease-in-out infinite;
+}
+
+
+
+
+
+
+
+
+/* Basic styling for the hamburger button */
+.hamburger {
+    font-size: 30px;
+    background: none;
+    border: none;
+    color: black;
+    cursor: pointer;
+    position: fixed;
+    right: 20px; 
+    z-index: 1001; 
+    transition: transform 0.3s ease-in-out; 
+}
+
+/* Full-screen menu sliding from the right */
+.menu {
+    position: fixed;
+    right: -250px; /* Initially off-screen to the right */
+    width: 250px; /* Width of the menu */
+    height: 100%;
+    background-color: #333; /* Solid background color (Dark Gray) */
+    display: none; /* Hidden by default */
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    z-index: 1000;
+    transition: right 0.3s ease-in-out; /* Smooth slide-in effect */
+}
+
+
+/* When the menu is active, it slides in from the right */
+.menu.active {
+    right: 0;
+    display: flex;
+    background: #000000;
+}
+
+/* Close button for the menu */
+.close-btn {
+    font-size: 40px;
+    color: white;
+    background: none;
+    border: none;
+    position: absolute;
+    top: 10px;
+    left: 20px; /* Place it on the left side inside the menu */
+    cursor: pointer;
+}
+
+/* Styling for the links in the menu */
+.menu-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    margin-top: 40px; /* Space from the close button */
+}
+
+.menu-list li {
+    top:5;
+    background-color: #000000;
+    padding: 15px;
+    border-bottom: 1px solid #444;
+}
+
+.menu-list li a {
+    display: block;
+    padding: 12px 18px;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 500;
+    color: white;
+    border-radius: 5px;
+    transition: all 0.3s ease-in-out;
+}
+
+/* Hover effect for links inside the menu-list */
+.menu-list li a {
+    position: relative;
+    display: inline-block;
+    padding: 10px;
+    color: white;
+    text-decoration: none;
+    border: 2px solid transparent;
+    transition: color 0.3s ease, border-color 0.3s ease, transform 0.3s ease;
+    font-weight: bold;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.4); /* Initial glow */
+}
+
+.menu-list li a:hover {
+    color: #fff; /* Text color change on hover */
+    border-color: #fff; /* Adds a glowing border on hover */
+    transform: scale(1.1); /* Slightly enlarges the element */
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.8), 0 0 30px rgba(0, 255, 255, 0.8); /* Neon glow effect */
+}
+
+
+
+
+/* Mobile Menu: Hide buttons and show hamburger on small screens */
+@media (max-width: 768px) {
+    .menu-hotel {
+        display: none; /* Hide the navbar buttons on mobile */
+    }
+
+    .hamburger {
+        display: block; /* Show hamburger on mobile */
+        font-size: 30px;
+        background: transparent;
+        border: none;
+        color: white;
+        cursor: pointer;
+    }
+
+    /* Show mobile menu when active */
+    .menu.active {
+        display: flex;
+        flex-direction: column;
+        background-color: #333;
+        padding: 10px;
+    }
+
+    .menu-list {
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    /* Close button for mobile menu */
+    .close-btn {
+        background: transparent;
+        color: white;
+        font-size: 40px;
+        border: none;
+        padding: 15px;
+        cursor: pointer;
+        position: absolute;
+        top: 10px;
+        right: 10px;
+    }
+
+    /* Dropdown for Luxury, Premium, and Economical */
+    .menu-list li a {
+        padding: 15px;
+        color: white;
+        text-decoration: none;
+        display: block;
+        background-color: #444;
+        border-bottom: 1px solid #555;
+    }
+
+    /* Highlight the links in dropdown */
+    .menu-list li a:hover {
+        background-color: #555;
+    }
+
+    .menu.active .menu-list {
+        display: block;
+    }
+
+    /* Move the unified button inside the menu for small screens */
+    .login-signup-section {
+        display: flex;
+        justify-content: flex-end;
+        margin-top: 20px;
+        margin-right: 10px;
+    }
+
+    .unified-btn {
+        position: absolute;
+        width: 100%;
+        background-color: #000000ac;
+        color: white;
+        font-weight: bold;
+        padding: 10px;
+        border-radius: 5px;
+        box-shadow: none;
+        transition: all 0.3s ease;
+    }
+
+    .unified-btn:hover {
+        background-color: #e60f0f;
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+    }
+}
+
+
+
+@media (max-width: 768px) {
+    .menu-list li a {
+        font-size: 20px; /* Increase font size for mobile */
+        padding: 18px 20px; /* Increase padding for mobile */
+    }
+}
+
+.login-signup-section {
+    position: relative;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-left: auto;  
+}
+.unified-btn {
+    position: absolute;
+    right: 25px; 
+    background-color: #000000ac;
+    color: white;
+    font-weight: bold;
+    padding: 8px 16px;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+}
+
+
+.unified-btn:hover {
+    background-color: #e60f0f;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+
+
+/* Mobile Styles */
+@media screen and (max-width: 768px) {
+    .navbar {
+        padding: 12px 20px;
+    }
+
+    .logo img {
+        height: 40px;
+    }
+
+    .menu {
+        flex-basis: 100%;
+        display: none;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .menu.active {
+        display: flex;
+    }
+
+    .menu a {
+        width: 100%;
+        text-align: center;
+    }
+
+    .hamburger {
+        display: block;
+        position: absolute;
+        background: none;
+        border: none;
+        font-size: 24px;
+        color: rgb(6, 6, 6);
+        cursor: pointer;
+        padding: 5px;
+        height: 40px;
+        margin-right: 85%;
+    }
+    
+    .login-signup-section {
+        display: block;
+        position: absolute;
+        left: 50%;
+        margin-left: 35%;
+        transform: translateX(-50%); 
+        order: 0;
+    }
+    
+    .menu {
+        display: flex;
+        list-style-type: none;
+        position: absolute;
+        left: -250px;
+        top: 0;
+        width: 250px;
+        background-color: #333;
+        height: 100vh;
+        transition: left 0.3s ease;
+        z-index: 1000;
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+    }
+    .menu li {
+        padding: 20px;
+        border-bottom: 1px solid #444;
+    }
+    
+    .menu li a {
+        color: white;
+        text-decoration: none;
+        display: block;
+    }
+    
+    .menu li a:hover {
+        background-color: #555;
+    }
+
+    .menu.active {
+        left: 0;
+    }
+    
+    
+    .close-btn {
+        background: transparent;
+        color: rgb(6, 6, 6);
+        font-size: 40px;
+        border: none;
+        padding: 15px;
+        cursor: pointer;
+        position: absolute;
+        top: 10px;
+        right: 10px; 
+    }
+    
+}
+
+
+@media screen and (max-width: 480px) {
+    .login-signup-section {
+        display: block;
+        position: absolute;
+        margin-top: 5px; /* Reduce margin-top to move it closer to the top */
+        margin-left: 22px; /* Keep the left margin for positioning */
+        order: 0;
+    }
+
+    .unified-btn {
+        width: auto; 
+        padding: 10px 20px;
+        font-size: 14px; 
+        min-width: 80px;
+    }
+}
+
+
+
+
+
+/* Body background image */
+body {
+    background: url('assets/valleyofflower.jpg') no-repeat center center fixed;
+    background-size: cover;
+}
+
+/* Updated Search Form with Glassmorphism */
+.search-form {
+    background: rgba(255, 255, 255, 0.1); /* Semi-transparent white background */
+    backdrop-filter: blur(10px); /* Frosted glass effect */
+    padding: 20px; /* Increased padding for larger area */
+    border-radius: 25px;
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+    margin-top: 125px; /* Slightly reduced top margin */
+    margin-bottom: 40px;
+    gap: 20px;
+    width: 80%; /* Increased width */
+    max-width: 1000px; /* Increased maximum width */
+    flex-wrap: wrap;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    animation: fadeInUp 0.6s ease-out;
+    position: relative;
+    z-index: 10; /* Ensures it appears above the background */
+}
+
+.search-field input::placeholder {
+    color: #000000; 
+}
+
+/* Input and select fields */
+.search-field {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    width: 15%; /* Increased width for input fields */
+    transition: all 0.3s ease;
+}
+
+/* Input fields with glassmorphism effect */
+.search-field input,
+.search-field select {
+    background: rgba(255, 255, 255, 0.2); /* Slight transparency */
+    padding: 12px;
+    font-size: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.3); /* Light border for inputs */
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(5px); /* Soft blur on fields */
+}
+
+.search-field input:focus,
+.search-field select:focus {
+    border-color: #DC143C;
+    box-shadow: 0 0 10px rgba(220, 20, 60, 0.2);
+    transform: translateY(-2px);
+}
+
+/* Search Button */
+.search-button {
+    padding: 15px 30px;
+    background-color: #DC143C;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 25px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    width: 20%; /* Increased width of the button */
+    position: relative;
+    overflow: hidden;
+    backdrop-filter: blur(5px); /* Soft blur for button */
+}
+
+.search-button:hover {
+    background-color: #9B0B2E;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(220, 20, 60, 0.3);
+}
+
+.search-button:active {
+    transform: translateY(0);
+}
+
+/* Animations */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+    .search-field {
+        width: 25%; /* Increased width for larger screens */
+    }
+    .search-button {
+        width: 20%; /* Increased width of the button */
+    }
+}
+
+@media (max-width: 768px) {
+    .search-form {
+        flex-direction: column; /* Stack form elements vertically */
+        padding: 30px; /* Slightly reduced padding */
+    }
+
+    .search-field {
+        width: 100%; /* Full width for input fields */
+    }
+
+    .search-button {
+        width: 100%; /* Full width for the button */
+        margin-top: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .search-form {
+        padding: 20px; /* Further reduced padding for small screens */
+    }
+
+    .search-field {
+        width: 100%; /* Input fields take full width */
+    }
+
+    .search-button {
+        width: 100%; /* Button takes full width */
+        font-size: 14px; /* Smaller font for button */
+    }
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .menu {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .slider-container {
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+
+    
+    .search-form {
+        width: 95%;
+        padding: 20px;
+        margin-bottom: 20px;
+    }
+
+    .search-field {
+        width: 100%;
+    }
+
+    .search-button {
+        width: 100%;
+    }
+
+    .partitioned-btn {
+        width: 100%;
+        margin: 10px 0;
+    }
+}
+
+
+/* Slider Container */
+#hotelTravelSlider {
+    position: relative;
+    max-width: 100%;
+    height: 70vh;
+    overflow: hidden;
+    margin: 0 auto;
+    background-color: #f1f1f1;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+
+
+.suggestion-box {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 20px;
+    background-color: #f4f4f4;
+}
+
+.suggestion {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    text-align: center;
+}
+
+.suggestion img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.suggestion h3 {
+    font-size: 1.5rem;
+    margin: 10px 0;
+}
+
+.suggestion p {
+    font-size: 1rem;
+    color: #555;
+}
+
+.suggestion .btn {
+    display: inline-block;
+    margin: 10px 0;
+    padding: 10px 20px;
+    background-color: #0e0e0e;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.suggestion .btn:hover {
+    background-color: #ff6347;
+}
+
+.suggestion-box .jan-mar {
+    color: rgb(233, 171, 15);
+    font-weight: bold;
+    transition: color 0.3s ease-in-out;
+}
+
+.suggestion-box .jan-mar:hover {
+    color: #ff6347;
+}
+
+
+
+
+
+.offers-section {
+    margin-top: 10px;
+    background-color: #f8f8f8;
+    padding: 50px;
+    text-align: center;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.offers-section h3 {
+    color: #2d2d2d;
+    font-size: 2rem;
+    margin-bottom: 15px;
+}
+
+.offers-section p {
+    color: #777;
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+}
+
+.offers-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    /* 5 columns */
+    gap: 20px;
+    margin-top: 30px;
+}
+
+.offer-item {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 15px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.offer-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+.offer-img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.offer-item h4 {
+    font-size: 1.3rem;
+    margin-top: 15px;
+    color: #333;
+}
+
+.offer-item p {
+    font-size: 1rem;
+    color: #777;
+    margin-top: 10px;
+}
+
+.btn {
+    font: 14px;
+    font-family: sans-serif;
+    padding: 10px 20px;
+    color: #008CFF;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    display: inline-block;
+    margin-top: 15px;
+    transition: background-color 0.3s ease;
+}
+
+
+/* Responsive design for smaller screens */
+@media (max-width: 1024px) {
+    .offers-grid {
+        grid-template-columns: repeat(3, 1fr);
+        /* 3 columns on tablets */
+    }
+}
+
+@media (max-width: 768px) {
+    .offers-grid {
+        grid-template-columns: repeat(2, 1fr);
+        /* 2 columns on mobile */
+    }
+}
+
+@media (max-width: 480px) {
+    .offers-grid {
+        grid-template-columns: 1fr;
+        /* 1 column on very small screens */
+    }
+}
+
+
+
+
+.places-list {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 20px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.place-item {
+    text-align: center;
+    padding: 10px;
+    background-color: #f8f8f8;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.place-img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-bottom: 10px;
+    transition: transform 0.3s ease;
+}
+
+.place-item:hover .place-img {
+    transform: scale(1.1);
+}
+
+.place-item p {
+    font-weight: bold;
+    color: #333;
+}
+
+
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    background-color: #f4f4f4;
+    max-width: 1200px;
+    margin: 10px auto;
+    padding: 20px;
+}
+
+.region-section {
+    margin-bottom: 40px;
+}
+
+.region-title {
+    color: #333;
+    font-size: 24px;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #eee;
+}
+
+.destinations-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Automatically adjust columns */
+    gap: 20px;
+}
+
+.destination-card {
+    margin: 5px;
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s;
+}
+
+.destination-card:hover {
+    transform: translateY(-3px);
+}
+
+.destination-image {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    margin-right: 15px;
+    object-fit: cover;
+    border: 3px solid #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.destination-info {
+    flex: 1;
+}
+
+.destination-name {
+    font-size: 18px;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+.destination-desc {
+    font-size: 14px;
+    color: #666;
+    line-height: 1.4;
+}
+
+/* Default 2 columns for medium screens */
+.destinations-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Creates 2 columns */
+    gap: 10px;
+}
+
+/* For large screens, 4 columns */
+@media (min-width: 768px) {
+    .destinations-grid {
+        grid-template-columns: repeat(4, 1fr); /* 4 columns */
+    }
+}
+
+/* For very small screens (mobile), single column layout */
+@media (max-width: 480px) {
+    .destinations-grid {
+        grid-template-columns: 1fr; /* Single column */
+        gap: 15px;
+    }
+}
+
+.destination-column {
+    padding: 10px;
+}
+
+.destination-column h3 {
+    margin-bottom: 20px;
+}
+
+
+/* Footer Styling */
+footer {
+    background: #0000000a;
+    color: white;
+    padding: 2rem 0;
+    text-align: center;
+}
+
+/* Slider Container */
+.slider-container {
+    display: flex;
+    gap: 1rem;
+    margin: 0 auto;
+    max-width: 1200px;
+    flex-wrap: wrap;
+}
+
+.slider-section {
+    flex: 1;
+    position: relative;
+    transition: flex 0.5s ease;
+    background-size: cover;
+    background-position: center;
+    overflow: hidden;
+    cursor: pointer;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    color: white;
+    height: 300px;
+    min-width: 250px; /* Ensures it doesn't shrink too much */
+}
+
+.slider-section::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.slider-section:hover {
+    flex: 2;
+}
+
+.section-title {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%) rotate(-90deg);
+    color: white;
+    font-size: 1.5rem;
+    font-weight: bold;
+    white-space: nowrap;
+    transition: opacity 0.3s ease;
+}
+
+.slider-section:hover .section-title {
+    opacity: 0.7;
+}
+
+/* Paragraph and Button initially hidden */
+.slider-section p {
+    display: none;
+    font-size: 16px;
+    line-height: 1.6;
+    margin-top: 15px;
+}
+
+.slider-section button {
+    display: none;
+    padding: 10px 15px;
+    background: #f39c12;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 15px;
+}
+
+.slider-section button:hover {
+    background: #e67e22;
+}
+
+/* Contact form styling */
+.contact-form {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease, pointer-events 0s ease 0.3s;
+}
+
+/* Input and textarea styling inside contact form */
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 0.75rem;
+    background: transparent;
+    border: 1px solid white;
+    color: white;
+    border-radius: 4px;
+    margin-bottom: 1rem;
+    display: none;
+}
+
+.contact-form button {
+    padding: 0.75rem;
+    background: #f39c12;
+    border: none;
+    color: white;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    display: none;
+}
+
+/* Initially, the contact form is hidden */
+.contact-form {
+    opacity: 0;
+    pointer-events: none;
+    display: none;
+    transition: opacity 0.3s ease, pointer-events 0s ease 0.3s;
+}
+
+/* When the form is shown, apply styles */
+.contact-form.show {
+    opacity: 1;
+    pointer-events: all;
+    display: block;
+}
+
+/* Input fields and submit button are hidden initially */
+.contact-form input,
+.contact-form textarea,
+.contact-form button {
+    display: none;
+}
+
+/* When the form is shown, input fields and button are visible */
+.contact-form.show input,
+.contact-form.show textarea,
+.contact-form.show button {
+    display: block;
+}
+
+/* Footer Bottom */
+.footer-bottom {
+    text-align: center;
+    margin-top: 20px;
+}
+
+/* Social Links Styling */
+.social-links {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    flex-wrap: nowrap; /* Ensure social icons stay in the same row */
+}
+
+.social-links a {
+    font-size: xx-large;
+    text-decoration: none;
+    color: #000000;
+    font-size: 24px;
+    transition: color 0.3s;
+}
+
+.social-links a:hover {
+    color: #007bff;
+}
+
+/* Responsive styles */
+
+/* For smaller screens (mobile), adjust the slider layout */
+@media (max-width: 768px) {
+    .slider-container {
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    .slider-section {
+        width: 100%; /* Make the slider sections take full width on mobile */
+        height: 250px; /* Adjust height for smaller screens */
+    }
+
+    .section-title {
+        font-size: 1rem; /* Adjust the title font size */
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%) rotate(0); /* Reset rotation on mobile */
+    }
+}
+
+/* For very small screens (mobile), adjust footer and form */
+@media (max-width: 480px) {
+    footer {
+        padding: 1rem;
+    }
+
+    .social-links {
+        flex-direction: row; /* Keep the icons in a row */
+        gap: 10px; /* Adjust the spacing between icons */
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+        padding: 0.5rem;
+    }
+
+    .contact-form button {
+        padding: 0.5rem;
+    }
+}
